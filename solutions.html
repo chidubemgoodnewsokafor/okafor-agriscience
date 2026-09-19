@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Solutions | Okafor Agriscience</title>
+
+    <meta name="description"
+          content="Explore Okafor Agriscience solutions in crop protection, plant nutrition, seeds, and animal health for poultry and pig production.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================================
+           SOLUTIONS PAGE
+        ========================================================= */
+
+        .solutions-hero {
+            min-height: 65vh;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.52),
+                    rgba(0,0,0,0.52)
+                ),
+                url('solutions-hero.jpg') center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .solutions-hero-content {
+            max-width: 760px;
+            padding: 100px 0;
+        }
+
+        .solutions-hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            margin: 15px 0 25px;
+        }
+
+        .solutions-hero p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            max-width: 650px;
+        }
+
+
+        /* INTRO */
+
+        .solutions-intro {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .solutions-intro h2 {
+            margin-bottom: 20px;
+        }
+
+        .solutions-intro p {
+            line-height: 1.8;
+        }
+
+
+        /* SOLUTION SECTIONS */
+
+        .solution-detail {
+            padding: 100px 0;
+        }
+
+        .solution-detail:nth-child(even) {
+            background: #f7f7f7;
+        }
+
+        .solution-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .solution-detail-image {
+            width: 100%;
+            min-height: 420px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #ddd;
+        }
+
+        .solution-detail-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .solution-detail-content {
+            max-width: 600px;
+        }
+
+        .solution-number {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #99010C;
+            margin-bottom: 15px;
+        }
+
+        .solution-detail h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            margin: 0 0 20px;
+        }
+
+        .solution-detail p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .solution-list {
+            margin: 25px 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .solution-list li {
+            margin-bottom: 12px;
+            padding-left: 22px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .solution-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #99010C;
+        }
+
+        .solution-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+
+        /* CTA */
+
+        .solutions-cta {
+            background: #074540;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .solutions-cta-content {
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .solutions-cta h2 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            margin-bottom: 20px;
+        }
+
+        .solutions-cta p {
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .solution-detail {
+                padding: 70px 0;
+            }
+
+            .solution-detail-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .solution-detail-image,
+            .solution-detail-image img {
+                min-height: 280px;
+            }
+
+            .solution-detail-content {
+                max-width: none;
+            }
+
+            .solutions-hero {
+                min-height: 70vh;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="index.html" class="brand-logo">
+
+            <img src="okafor-logo.png"
+                 alt="Okafor Agriscience"
+                 class="logo-image">
+
+        </a>
+
+
+        <nav class="nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="solutions.html">
+                Solutions
+            </a>
+
+            <a href="products.html">
+                Products
+            </a>
+
+            <a href="science.html">
+                Our Science
+            </a>
+
+            <a href="farm-automation.html">
+                Farm Technology
+            </a>
+
+            <a href="brands.html">
+                Our Brands
+            </a>
+
+            <a href="where-to-buy.html">
+                Where to Buy
+            </a>
+
+            <a href="insights.html">
+                Insights
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <button class="menu-button"
+                aria-label="Open navigation menu">
+
+            ☰
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="solutions-hero">
+
+    <div class="container">
+
+        <div class="solutions-hero-content">
+
+            <p class="eyebrow">
+                OKAFOR AGRISCIENCE
+            </p>
+
+            <h1>
+                Agricultural<br>
+                solutions.
+            </h1>
+
+            <p>
+                Science-based solutions designed to support
+                healthier crops, productive farms and better
+                animal production.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="solutions-intro">
+
+            <p class="eyebrow dark">
+                WHAT WE DO
+            </p>
+
+            <h2>
+                Solutions built around agriculture.
+            </h2>
+
+            <p>
+                At Okafor Agriscience, we focus on practical
+                agricultural solutions that address the needs
+                of farmers and modern food production.
+            </p>
+
+            <p>
+                Our solutions span crop protection, plant
+                nutrition, seeds and animal health, supported
+                by scientific knowledge and an understanding
+                of farming.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CROP PROTECTION
+========================================================= -->
+
+<section class="solution-detail"
+         id="crop-protection">
+
+    <div class="container">
+
+        <div class="solution-detail-grid">
+
+
+            <div class="solution-detail-image">
+
+                <img src="crop-protection.jpg"
+                     alt="Crop protection">
+
+            </div>
+
+
+            <div class="solution-detail-content">
+
+                <div class="solution-number">
+                    01 — CROP PROTECTION
+                </div>
+
+                <h2>
+                    Protecting crops
+                    from the threats
+                    that reduce yield.
+                </h2>
+
+                <p>
+                    Healthy crops are the foundation of
+                    productive farming. Our crop protection
+                    solutions help farmers manage the major
+                    threats that affect crop health and yield.
+                </p>
+
+                <ul class="solution-list">
+
+                    <li>
+                        Insect and pest management
+                    </li>
+
+                    <li>
+                        Disease management
+                    </li>
+
+                    <li>
+                        Weed control
+                    </li>
+
+                    <li>
+                        Crop protection programmes
+                    </li>
+
+                </ul>
+
+                <p>
+                    We combine product solutions with
+                    practical agricultural knowledge to help
+                    farmers protect their crops throughout
+                    the production cycle.
+                </p>
+
+                <a href="products.html#crop-protection"
+                   class="solution-link">
+                    View crop protection products →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PLANT NUTRITION
+========================================================= -->
+
+<section class="solution-detail"
+         id="plant-nutrition">
+
+    <div class="container">
+
+        <div class="solution-detail-grid">
+
+
+            <div class="solution-detail-content">
+
+                <div class="solution-number">
+                    02 — PLANT NUTRITION
+                </div>
+
+                <h2>
+                    Nutrition for
+                    stronger crop growth.
+                </h2>
+
+                <p>
+                    Plants require the right nutrients,
+                    in the right amounts, at the right
+                    stages of growth.
+                </p>
+
+                <p>
+                    Our plant nutrition solutions support
+                    crop development, plant health and
+                    productivity through fertilizers and
+                    targeted micronutrient solutions.
+                </p>
+
+                <ul class="solution-list">
+
+                    <li>
+                        Fertilizers
+                    </li>
+
+                    <li>
+                        Micronutrients
+                    </li>
+
+                    <li>
+                        Crop nutrition programmes
+                    </li>
+
+                    <li>
+                        Solutions for different crop stages
+                    </li>
+
+                </ul>
+
+                <a href="products.html#plant-nutrition"
+                   class="solution-link">
+                    View plant nutrition products →
+                </a>
+
+            </div>
+
+
+            <div class="solution-detail-image">
+
+                <img src="plant-nutrition.jpg"
+                     alt="Plant nutrition">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SEEDS
+========================================================= -->
+
+<section class="solution-detail"
+         id="seeds">
+
+    <div class="container">
+
+        <div class="solution-detail-grid">
+
+
+            <div class="solution-detail-image">
+
+                <img src="seeds.jpg"
+                     alt="Agricultural seeds">
+
+            </div>
+
+
+            <div class="solution-detail-content">
+
+                <div class="solution-number">
+                    03 — SEEDS
+                </div>
+
+                <h2>
+                    Starting with
+                    better genetics.
+                </h2>
+
+                <p>
+                    Good farming starts with the right
+                    seed. We provide seed solutions selected
+                    for productive agricultural systems and
+                    the needs of farmers.
+                </p>
+
+                <p>
+                    Our seed portfolio covers both
+                    <strong>vegetable seeds</strong> and
+                    <strong>field seeds</strong>, supporting
+                    different crops and production systems.
+                </p>
+
+                <ul class="solution-list">
+
+                    <li>
+                        Vegetable seeds
+                    </li>
+
+                    <li>
+                        Field seeds
+                    </li>
+
+                    <li>
+                        Improved varieties
+                    </li>
+
+                    <li>
+                        Seeds selected for agricultural performance
+                    </li>
+
+                </ul>
+
+                <a href="products.html#seeds"
+                   class="solution-link">
+                    View seed products →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     ANIMAL HEALTH
+========================================================= -->
+
+<section class="solution-detail"
+         id="animal-health">
+
+    <div class="container">
+
+        <div class="solution-detail-grid">
+
+
+            <div class="solution-detail-content">
+
+                <div class="solution-number">
+                    04 — ANIMAL HEALTH
+                </div>
+
+                <h2>
+                    Health and nutrition
+                    for better animal production.
+                </h2>
+
+                <p>
+                    Our animal health business focuses on
+                    <strong>poultry and pig production</strong>,
+                    supporting farmers with solutions for
+                    healthier animals and productive farms.
+                </p>
+
+                <p>
+                    We combine animal health and nutrition
+                    with practical production knowledge to
+                    support animals throughout their
+                    production cycle.
+                </p>
+
+                <ul class="solution-list">
+
+                    <li>
+                        Poultry health
+                    </li>
+
+                    <li>
+                        Pig health
+                    </li>
+
+                    <li>
+                        Poultry and pig nutrition
+                    </li>
+
+                    <li>
+                        Animal health products
+                    </li>
+
+                    <li>
+                        Feed additives and nutritional support
+                    </li>
+
+                </ul>
+
+                <p>
+                    Our focus is on helping poultry and pig
+                    farmers maintain healthy animals and
+                    build efficient production systems.
+                </p>
+
+                <a href="products.html#animal-health"
+                   class="solution-link">
+                    View animal health products →
+                </a>
+
+            </div>
+
+
+            <div class="solution-detail-image">
+
+                <img src="animal-health.jpg"
+                     alt="Poultry and pig animal health">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     OUR APPROACH
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="solutions-intro">
+
+            <p class="eyebrow dark">
+                OUR APPROACH
+            </p>
+
+            <h2>
+                Science behind the solution.
+            </h2>
+
+            <p>
+                Our solutions are connected to the science
+                behind agriculture. We use knowledge from
+                crop science, animal science, breeding and
+                genetics, and agricultural technology to
+                understand problems and identify useful
+                solutions.
+            </p>
+
+            <a href="science.html"
+               class="button button-dark">
+                Discover our science
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PRODUCTS CTA
+========================================================= -->
+
+<section class="solutions-cta">
+
+    <div class="container">
+
+        <div class="solutions-cta-content">
+
+            <p class="eyebrow">
+                OUR PRODUCTS
+            </p>
+
+            <h2>
+                Explore our agricultural products.
+            </h2>
+
+            <p>
+                Discover products across crop protection,
+                plant nutrition, seeds and animal health.
+            </p>
+
+            <a href="products.html"
+               class="button button-primary">
+                Explore products
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FARMERS CTA
+========================================================= -->
+
+<section class="farmer-banner">
+
+    <div class="container farmer-content">
+
+        <p class="eyebrow">
+            FOR FARMERS
+        </p>
+
+        <h2>
+            Better farming,
+            food for all.
+        </h2>
+
+        <p>
+            Helping farmers access better agricultural
+            solutions, knowledge and technology.
+        </p>
+
+        <a href="where-to-buy.html"
+           class="button button-primary">
+            Find our products
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-brand">
+
+            <img src="okafor-logo.png"
+                 alt="Okafor Agriscience"
+                 class="footer-logo-image">
+
+            <p class="footer-motto">
+                Science that nourishes.
+            </p>
+
+            <p class="footer-company">
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Solutions
+            </h4>
+
+            <a href="solutions.html#crop-protection">
+                Crop Protection
+            </a>
+
+            <a href="solutions.html#plant-nutrition">
+                Plant Nutrition
+            </a>
+
+            <a href="solutions.html#seeds">
+                Seeds
+            </a>
+
+            <a href="solutions.html#animal-health">
+                Animal Health
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Our Science
+            </h4>
+
+            <a href="science.html#crop-science">
+                Crop Science
+            </a>
+
+            <a href="science.html#animal-science">
+                Animal Science
+            </a>
+
+            <a href="science.html#genetics">
+                Breeding & Genetics
+            </a>
+
+            <a href="farm-automation.html">
+                Farm Technology
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Company
+            </h4>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="brands.html">
+                Our Brands
+            </a>
+
+            <a href="where-to-buy.html">
+                Where to Buy
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 Okafor Agriscience Ltd
+            All rights reserved.
+        </p>
+
+        <p>
+            OKAFOR AGRISCIENCE
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
