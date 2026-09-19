@@ -228,6 +228,14 @@
             text-align: center;
         }
 
+        .products-cta .eyebrow {
+            color: #074540;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
         .products-cta h2 {
             color: #074540;
             font-size: 36px;
@@ -255,15 +263,31 @@
             background: #01998E;
         }
 
+        /* =========================
+           FOOTER LOGO
+           Same logo file, displayed white
+        ========================== */
+
+        .footer-logo {
+            width: 125px;
+            max-width: 100%;
+            height: auto;
+            filter: brightness(0) invert(1);
+            margin-bottom: 12px;
+        }
+
         /* RESPONSIVE */
 
         @media (max-width: 900px) {
+
             .products-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
         }
 
         @media (max-width: 600px) {
+
             .products-hero {
                 padding: 70px 20px;
             }
@@ -296,6 +320,11 @@
             .products-cta h2 {
                 font-size: 30px;
             }
+
+            .footer-logo {
+                width: 110px;
+            }
+
         }
     </style>
 </head>
@@ -307,31 +336,46 @@
     ========================== -->
 
     <header class="header">
+
         <div class="container nav-container">
 
             <a href="index.html" class="brand-logo">
-                <img src="okafor-logo.png"
-                     alt="Okafor Agriscience"
-                     class="logo-image">
+                <img
+                    src="okafor-logo.png"
+                    alt="Okafor Agriscience"
+                    class="logo-image">
             </a>
 
             <nav class="nav">
+
                 <a href="index.html">Home</a>
+
                 <a href="solutions.html">Solutions</a>
+
                 <a href="products.html">Products</a>
+
                 <a href="science.html">Our Science</a>
+
                 <a href="farm-automation.html">Farm Technology</a>
+
                 <a href="brands.html">Our Brands</a>
+
                 <a href="where-to-buy.html">Where to Buy</a>
+
                 <a href="insights.html">Insights</a>
+
                 <a href="contact.html">Contact</a>
+
             </nav>
 
-            <button class="menu-button" aria-label="Open navigation menu">
+            <button
+                class="menu-button"
+                aria-label="Open navigation menu">
                 ☰
             </button>
 
         </div>
+
     </header>
 
 
@@ -369,7 +413,9 @@
                     AGRICULTURAL SOLUTIONS
                 </div>
 
-                <h2>Products for better agriculture.</h2>
+                <h2>
+                    Products for better agriculture.
+                </h2>
 
                 <p>
                     Our product catalogue is growing as we develop and
@@ -388,8 +434,7 @@
                     type="search"
                     id="productSearch"
                     placeholder="Search products..."
-                    aria-label="Search products"
-                >
+                    aria-label="Search products">
 
             </div>
 
@@ -439,54 +484,59 @@
 
             <!-- PRODUCT GRID -->
 
-            <div class="products-grid" id="productsGrid">
+            <div
+                class="products-grid"
+                id="productsGrid">
 
                 <!--
-                FUTURE PRODUCT CARD
+                    REAL PRODUCTS WILL BE ADDED HERE LATER.
 
-                Copy this structure when you are ready
-                to add a real product.
+                    Example:
 
-                <article
-                    class="product-card"
-                    data-category="seeds"
-                    data-name="Product Name">
+                    <article
+                        class="product-card"
+                        data-category="seeds"
+                        data-name="Product Name">
 
-                    <div class="product-image">
-                        <img
-                            src="images/product-name.jpg"
-                            alt="Product Name">
-                    </div>
+                        <div class="product-image">
+                            <img
+                                src="images/product-name.jpg"
+                                alt="Product Name">
+                        </div>
 
-                    <div class="product-content">
+                        <div class="product-content">
 
-                        <span class="product-category">
-                            Seeds
-                        </span>
+                            <span class="product-category">
+                                Seeds
+                            </span>
 
-                        <h3>Product Name</h3>
+                            <h3>
+                                Product Name
+                            </h3>
 
-                        <p>
-                            Short product description.
-                        </p>
+                            <p>
+                                Short product description.
+                            </p>
 
-                        <a
-                            href="product-name.html"
-                            class="product-link">
-                            View product →
-                        </a>
+                            <a
+                                href="product-name.html"
+                                class="product-link">
+                                View product →
+                            </a>
 
-                    </div>
+                        </div>
 
-                </article>
+                    </article>
                 -->
 
             </div>
 
 
-            <!-- EMPTY MESSAGE -->
+            <!-- COMING SOON -->
 
-            <div class="products-empty" id="productsEmpty">
+            <div
+                class="products-empty"
+                id="productsEmpty">
 
                 <div class="products-empty-icon">
                     +
@@ -669,7 +719,7 @@
 
 
     <!-- =========================
-         PRODUCT PAGE JAVASCRIPT
+         PRODUCT FILTER JAVASCRIPT
     ========================== -->
 
     <script>
@@ -759,13 +809,10 @@
                     btn.classList.remove("active");
                 });
 
-
                 button.classList.add("active");
-
 
                 currentFilter =
                     button.dataset.filter;
-
 
                 filterProducts();
 
@@ -784,6 +831,13 @@
 
     </script>
 
+
+    <!-- =========================
+         MAIN OKAFOR NAVIGATION
+         Includes hamburger menu
+    ========================== -->
+
+    <script src="script.js"></script>
 
 </body>
 </html>
