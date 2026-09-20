@@ -1,843 +1,892 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Products | Okafor Agriscience</title>
 
-    <title>Products | Okafor Agriscience</title>
+<meta name="description" content="Explore agricultural products and solutions from Okafor Agriscience.">
 
-    <meta name="description" content="Explore agricultural products and solutions from Okafor Agriscience.">
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
+<style>
+    /* =========================
+       PRODUCTS PAGE
+    ========================== */
 
-    <style>
-        /* =========================
-           PRODUCTS PAGE
-        ========================== */
+    .products-hero {
+        background: #074540;
+        color: #ffffff;
+        padding: 90px 20px;
+        text-align: center;
+    }
 
-        .products-hero {
-            background: #074540;
-            color: #ffffff;
-            padding: 90px 20px;
-            text-align: center;
+    .products-hero .eyebrow {
+        color: #FFE500;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .products-hero h1 {
+        font-size: 48px;
+        margin: 0 0 20px;
+    }
+
+    .products-hero p {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    .products-section {
+        padding: 80px 20px;
+    }
+
+    .products-intro {
+        text-align: center;
+        max-width: 750px;
+        margin: 0 auto 40px;
+    }
+
+    .products-intro .eyebrow {
+        color: #01998E;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 14px;
+    }
+
+    .products-intro h2 {
+        font-size: 38px;
+        margin: 12px 0 15px;
+        color: #074540;
+    }
+
+    .products-intro p {
+        line-height: 1.7;
+        color: #555;
+    }
+
+    /* SEARCH */
+
+    .product-search {
+        max-width: 650px;
+        margin: 0 auto 30px;
+    }
+
+    .product-search input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 16px 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .product-search input:focus {
+        border-color: #01998E;
+    }
+
+    /* FILTERS */
+
+    .product-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 45px;
+    }
+
+    .product-filter {
+        border: 1px solid #01998E;
+        background: #ffffff;
+        color: #074540;
+        padding: 11px 18px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.3s ease;
+    }
+
+    .product-filter:hover,
+    .product-filter.active {
+        background: #01998E;
+        color: #ffffff;
+    }
+
+    /* PRODUCT GRID */
+
+    .products-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .product-card {
+        background: #ffffff;
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .product-image {
+        height: 220px;
+        background: #f2f2f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+        font-size: 15px;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .product-content {
+        padding: 25px;
+    }
+
+    .product-category {
+        color: #01998E;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .product-content h3 {
+        color: #074540;
+        margin: 10px 0;
+        font-size: 23px;
+    }
+
+    .product-content p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .product-link {
+        color: #99010C;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .product-link:hover {
+        text-decoration: underline;
+    }
+
+    /* EMPTY / COMING SOON */
+
+    .products-empty {
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 55px 30px;
+        text-align: center;
+        border: 2px dashed #d8d8d8;
+        border-radius: 15px;
+        background: #fafafa;
+    }
+
+    .products-empty-icon {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: #FFE500;
+        color: #074540;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .products-empty h3 {
+        color: #074540;
+        font-size: 27px;
+        margin-bottom: 12px;
+    }
+
+    .products-empty p {
+        max-width: 600px;
+        margin: 0 auto;
+        color: #666;
+        line-height: 1.7;
+    }
+
+    /* CTA */
+
+    .products-cta {
+        background: #FFE500;
+        padding: 70px 20px;
+        text-align: center;
+    }
+
+    .products-cta .eyebrow {
+        color: #074540;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .products-cta h2 {
+        color: #074540;
+        font-size: 36px;
+        margin: 0 0 15px;
+    }
+
+    .products-cta p {
+        max-width: 650px;
+        margin: 0 auto 25px;
+        color: #333;
+        line-height: 1.7;
+    }
+
+    .products-cta a {
+        display: inline-block;
+        background: #074540;
+        color: #ffffff;
+        padding: 14px 25px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+    .products-cta a:hover {
+        background: #01998E;
+    }
+
+    /* FOOTER LOGO */
+
+    .footer-logo {
+        width: 125px;
+        max-width: 100%;
+        height: auto;
+        filter: brightness(0) invert(1);
+        margin-bottom: 12px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+
+        .products-grid {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        .products-hero .eyebrow {
-            color: #FFE500;
-            font-weight: 700;
-            letter-spacing: 2px;
-            font-size: 14px;
-            margin-bottom: 15px;
+    }
+
+    @media (max-width: 600px) {
+
+        .products-hero {
+            padding: 70px 20px;
         }
 
         .products-hero h1 {
-            font-size: 48px;
-            margin: 0 0 20px;
-        }
-
-        .products-hero p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
-            line-height: 1.7;
-        }
-
-        .products-section {
-            padding: 80px 20px;
-        }
-
-        .products-intro {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 40px;
-        }
-
-        .products-intro .eyebrow {
-            color: #01998E;
-            font-weight: 700;
-            letter-spacing: 2px;
-            font-size: 14px;
+            font-size: 38px;
         }
 
         .products-intro h2 {
-            font-size: 38px;
-            margin: 12px 0 15px;
-            color: #074540;
+            font-size: 30px;
         }
 
-        .products-intro p {
-            line-height: 1.7;
-            color: #555;
+        .products-section {
+            padding: 60px 15px;
         }
 
-        /* SEARCH */
-
-        .product-search {
-            max-width: 650px;
-            margin: 0 auto 30px;
+        .products-grid {
+            grid-template-columns: 1fr;
         }
-
-        .product-search input {
-            width: 100%;
-            box-sizing: border-box;
-            padding: 16px 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-            outline: none;
-        }
-
-        .product-search input:focus {
-            border-color: #01998E;
-        }
-
-        /* FILTERS */
 
         .product-filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 45px;
+            gap: 8px;
         }
 
         .product-filter {
-            border: 1px solid #01998E;
-            background: #ffffff;
-            color: #074540;
-            padding: 11px 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s ease;
-        }
-
-        .product-filter:hover,
-        .product-filter.active {
-            background: #01998E;
-            color: #ffffff;
-        }
-
-        /* PRODUCT GRID */
-
-        .products-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .product-card {
-            background: #ffffff;
-            border: 1px solid #e5e5e5;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-        }
-
-        .product-image {
-            height: 220px;
-            background: #f2f2f2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-size: 15px;
-        }
-
-        .product-content {
-            padding: 25px;
-        }
-
-        .product-category {
-            color: #01998E;
+            padding: 9px 13px;
             font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .product-content h3 {
-            color: #074540;
-            margin: 10px 0;
-            font-size: 23px;
-        }
-
-        .product-content p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .product-link {
-            color: #99010C;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .product-link:hover {
-            text-decoration: underline;
-        }
-
-        /* EMPTY / COMING SOON */
-
-        .products-empty {
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 55px 30px;
-            text-align: center;
-            border: 2px dashed #d8d8d8;
-            border-radius: 15px;
-            background: #fafafa;
-        }
-
-        .products-empty-icon {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            background: #FFE500;
-            color: #074540;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 32px;
-            font-weight: 700;
-        }
-
-        .products-empty h3 {
-            color: #074540;
-            font-size: 27px;
-            margin-bottom: 12px;
-        }
-
-        .products-empty p {
-            max-width: 600px;
-            margin: 0 auto;
-            color: #666;
-            line-height: 1.7;
-        }
-
-        /* CTA */
-
-        .products-cta {
-            background: #FFE500;
-            padding: 70px 20px;
-            text-align: center;
-        }
-
-        .products-cta .eyebrow {
-            color: #074540;
-            font-weight: 700;
-            letter-spacing: 2px;
-            font-size: 14px;
-            margin-bottom: 10px;
         }
 
         .products-cta h2 {
-            color: #074540;
-            font-size: 36px;
-            margin: 0 0 15px;
+            font-size: 30px;
         }
-
-        .products-cta p {
-            max-width: 650px;
-            margin: 0 auto 25px;
-            color: #333;
-            line-height: 1.7;
-        }
-
-        .products-cta a {
-            display: inline-block;
-            background: #074540;
-            color: #ffffff;
-            padding: 14px 25px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .products-cta a:hover {
-            background: #01998E;
-        }
-
-        /* =========================
-           FOOTER LOGO
-           Same logo file, displayed white
-        ========================== */
 
         .footer-logo {
-            width: 125px;
-            max-width: 100%;
-            height: auto;
-            filter: brightness(0) invert(1);
-            margin-bottom: 12px;
+            width: 110px;
         }
 
-        /* RESPONSIVE */
+    }
+</style>
 
-        @media (max-width: 900px) {
+</head><body><!-- =========================
+     HEADER
+========================== -->
 
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+<header class="header">
 
-        }
+    <div class="container nav-container">
 
-        @media (max-width: 600px) {
+        <a href="index.html" class="brand-logo">
+            <img
+                src="okafor-logo.png"
+                alt="Okafor Agriscience"
+                class="logo-image">
+        </a>
 
-            .products-hero {
-                padding: 70px 20px;
-            }
+        <nav class="nav">
 
-            .products-hero h1 {
-                font-size: 38px;
-            }
+            <a href="index.html">Home</a>
 
-            .products-intro h2 {
-                font-size: 30px;
-            }
+            <a href="solutions.html">Solutions</a>
 
-            .products-section {
-                padding: 60px 15px;
-            }
+            <a href="products.html">Products</a>
 
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
+            <a href="science.html">Our Science</a>
 
-            .product-filters {
-                gap: 8px;
-            }
+            <a href="farm-automation.html">Farm Technology</a>
 
-            .product-filter {
-                padding: 9px 13px;
-                font-size: 13px;
-            }
+            <a href="brands.html">Our Brands</a>
 
-            .products-cta h2 {
-                font-size: 30px;
-            }
+            <a href="where-to-buy.html">Where to Buy</a>
 
-            .footer-logo {
-                width: 110px;
-            }
+            <a href="insights.html">Insights</a>
 
-        }
-    </style>
-</head>
+            <a href="contact.html">Contact</a>
 
-<body>
+        </nav>
 
-    <!-- =========================
-         HEADER
-    ========================== -->
+        <button
+            class="menu-button"
+            aria-label="Open navigation menu">
+            ☰
+        </button>
 
-    <header class="header">
+    </div>
 
-        <div class="container nav-container">
+</header>
 
-            <a href="index.html" class="brand-logo">
-                <img
-                    src="okafor-logo.png"
-                    alt="Okafor Agriscience"
-                    class="logo-image">
-            </a>
 
-            <nav class="nav">
+<!-- =========================
+     HERO
+========================== -->
 
-                <a href="index.html">Home</a>
+<section class="products-hero">
 
-                <a href="solutions.html">Solutions</a>
+    <div class="eyebrow">
+        OKAFOR AGRISCIENCE
+    </div>
 
-                <a href="products.html">Products</a>
+    <h1>Our Products</h1>
 
-                <a href="science.html">Our Science</a>
+    <p>
+        Agricultural products and solutions built around science,
+        innovation and the needs of farmers.
+    </p>
 
-                <a href="farm-automation.html">Farm Technology</a>
+</section>
 
-                <a href="brands.html">Our Brands</a>
 
-                <a href="where-to-buy.html">Where to Buy</a>
+<!-- =========================
+     PRODUCTS
+========================== -->
 
-                <a href="insights.html">Insights</a>
+<main>
 
-                <a href="contact.html">Contact</a>
+    <section class="products-section">
 
-            </nav>
+        <div class="products-intro">
+
+            <div class="eyebrow">
+                AGRICULTURAL SOLUTIONS
+            </div>
+
+            <h2>
+                Products for better agriculture.
+            </h2>
+
+            <p>
+                Our product catalogue is growing as we develop and
+                introduce agricultural solutions designed to support
+                farmers, livestock producers and the wider food system.
+            </p>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="product-search">
+
+            <input
+                type="search"
+                id="productSearch"
+                placeholder="Search products..."
+                aria-label="Search products">
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="product-filters">
 
             <button
-                class="menu-button"
-                aria-label="Open navigation menu">
-                ☰
+                class="product-filter active"
+                data-filter="all">
+                All Products
+            </button>
+
+            <button
+                class="product-filter"
+                data-filter="crop-protection"
+                id="crop-protection">
+                Crop Protection
+            </button>
+
+            <button
+                class="product-filter"
+                data-filter="plant-nutrition"
+                id="plant-nutrition">
+                Plant Nutrition
+            </button>
+
+            <button
+                class="product-filter"
+                data-filter="seeds"
+                id="seeds">
+                Seeds
+            </button>
+
+            <button
+                class="product-filter"
+                data-filter="animal-health"
+                id="animal-health">
+                Animal Health
+            </button>
+
+            <button
+                class="product-filter"
+                data-filter="genetics"
+                id="genetics">
+                Breeding &amp; Genetics
             </button>
 
         </div>
 
-    </header>
 
+        <!-- PRODUCT GRID -->
 
-    <!-- =========================
-         HERO
-    ========================== -->
+        <div
+            class="products-grid"
+            id="productsGrid">
 
-    <section class="products-hero">
+            <!--
+                REAL PRODUCTS WILL BE ADDED HERE LATER.
 
-        <div class="eyebrow">
-            OKAFOR AGRISCIENCE
+                Example:
+
+                <article
+                    class="product-card"
+                    data-category="seeds"
+                    data-name="Product Name">
+
+                    <div class="product-image">
+                        <img
+                            src="images/product-name.jpg"
+                            alt="Product Name">
+                    </div>
+
+                    <div class="product-content">
+
+                        <span class="product-category">
+                            Seeds
+                        </span>
+
+                        <h3>
+                            Product Name
+                        </h3>
+
+                        <p>
+                            Short product description.
+                        </p>
+
+                        <a
+                            href="product-name.html"
+                            class="product-link">
+                            View product →
+                        </a>
+
+                    </div>
+
+                </article>
+            -->
+
         </div>
 
-        <h1>Our Products</h1>
 
-        <p>
-            Agricultural products and solutions built around science,
-            innovation and the needs of farmers.
-        </p>
+        <!-- COMING SOON -->
+
+        <div
+            class="products-empty"
+            id="productsEmpty">
+
+            <div class="products-empty-icon">
+                +
+            </div>
+
+            <h3>
+                Our product catalogue is coming soon.
+            </h3>
+
+            <p>
+                We are building our portfolio of agricultural products
+                and solutions. Check back soon to explore products from
+                Okafor Agriscience.
+            </p>
+
+        </div>
 
     </section>
 
 
     <!-- =========================
-         PRODUCTS
+         FARMER CTA
     ========================== -->
 
-    <main>
+    <section class="products-cta">
 
-        <section class="products-section">
+        <div class="eyebrow">
+            FOR FARMERS
+        </div>
 
-            <div class="products-intro">
+        <h2>
+            Better farming, food for all.
+        </h2>
 
-                <div class="eyebrow">
-                    AGRICULTURAL SOLUTIONS
-                </div>
+        <p>
+            Connect with Okafor Agriscience to learn more about our
+            agricultural solutions, technology and growing product
+            portfolio.
+        </p>
 
-                <h2>
-                    Products for better agriculture.
-                </h2>
+        <a href="contact.html">
+            Contact Us
+        </a>
+
+    </section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <img
+                    src="okafor-logo.png"
+                    alt="Okafor Agriscience"
+                    class="footer-logo">
 
                 <p>
-                    Our product catalogue is growing as we develop and
-                    introduce agricultural solutions designed to support
-                    farmers, livestock producers and the wider food system.
+                    Science that nourishes.
+                </p>
+
+                <p>
+                    Okafor Agriscience is a science-based agriculture
+                    company focused on agricultural solutions,
+                    technology and better farming.
                 </p>
 
             </div>
 
 
-            <!-- SEARCH -->
+            <!-- SOLUTIONS -->
 
-            <div class="product-search">
+            <div class="footer-column">
 
-                <input
-                    type="search"
-                    id="productSearch"
-                    placeholder="Search products..."
-                    aria-label="Search products">
+                <h4>Solutions</h4>
 
-            </div>
-
-
-            <!-- FILTERS -->
-
-            <div class="product-filters">
-
-                <button
-                    class="product-filter active"
-                    data-filter="all">
-                    All Products
-                </button>
-
-                <button
-                    class="product-filter"
-                    data-filter="crop-protection">
+                <a href="solutions.html#crop-protection">
                     Crop Protection
-                </button>
+                </a>
 
-                <button
-                    class="product-filter"
-                    data-filter="plant-nutrition">
+                <a href="solutions.html#plant-nutrition">
                     Plant Nutrition
-                </button>
+                </a>
 
-                <button
-                    class="product-filter"
-                    data-filter="seeds">
+                <a href="solutions.html#seeds">
                     Seeds
-                </button>
+                </a>
 
-                <button
-                    class="product-filter"
-                    data-filter="animal-health">
+                <a href="solutions.html#animal-health">
                     Animal Health
-                </button>
+                </a>
 
-                <button
-                    class="product-filter"
-                    data-filter="genetics">
+            </div>
+
+
+            <!-- OUR SCIENCE -->
+
+            <div class="footer-column">
+
+                <h4>Our Science</h4>
+
+                <a href="science.html#crop-science">
+                    Crop Science
+                </a>
+
+                <a href="science.html#animal-science">
+                    Animal Science
+                </a>
+
+                <a href="science.html#genetics">
                     Breeding &amp; Genetics
-                </button>
+                </a>
+
+                <a href="farm-automation.html">
+                    Farm Technology
+                </a>
 
             </div>
 
 
-            <!-- PRODUCT GRID -->
+            <!-- COMPANY -->
 
-            <div
-                class="products-grid"
-                id="productsGrid">
+            <div class="footer-column">
 
-                <!--
-                    REAL PRODUCTS WILL BE ADDED HERE LATER.
+                <h4>Company</h4>
 
-                    Example:
+                <a href="about.html">
+                    About
+                </a>
 
-                    <article
-                        class="product-card"
-                        data-category="seeds"
-                        data-name="Product Name">
+                <a href="brands.html">
+                    Our Brands
+                </a>
 
-                        <div class="product-image">
-                            <img
-                                src="images/product-name.jpg"
-                                alt="Product Name">
-                        </div>
+                <a href="where-to-buy.html">
+                    Where to Buy
+                </a>
 
-                        <div class="product-content">
-
-                            <span class="product-category">
-                                Seeds
-                            </span>
-
-                            <h3>
-                                Product Name
-                            </h3>
-
-                            <p>
-                                Short product description.
-                            </p>
-
-                            <a
-                                href="product-name.html"
-                                class="product-link">
-                                View product →
-                            </a>
-
-                        </div>
-
-                    </article>
-                -->
-
-            </div>
-
-
-            <!-- COMING SOON -->
-
-            <div
-                class="products-empty"
-                id="productsEmpty">
-
-                <div class="products-empty-icon">
-                    +
-                </div>
-
-                <h3>
-                    Our product catalogue is coming soon.
-                </h3>
-
-                <p>
-                    We are building our portfolio of agricultural products
-                    and solutions. Check back soon to explore products from
-                    Okafor Agriscience.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             FARMER CTA
-        ========================== -->
-
-        <section class="products-cta">
-
-            <div class="eyebrow">
-                FOR FARMERS
-            </div>
-
-            <h2>
-                Better farming, food for all.
-            </h2>
-
-            <p>
-                Connect with Okafor Agriscience to learn more about our
-                agricultural solutions, technology and growing product
-                portfolio.
-            </p>
-
-            <a href="contact.html">
-                Contact Us
-            </a>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer class="footer">
-
-        <div class="container">
-
-            <div class="footer-grid">
-
-                <!-- BRAND -->
-
-                <div class="footer-brand">
-
-                    <img
-                        src="okafor-logo.png"
-                        alt="Okafor Agriscience"
-                        class="footer-logo">
-
-                    <p>
-                        Science that nourishes.
-                    </p>
-
-                    <p>
-                        Okafor Agriscience is a science-based agriculture
-                        company focused on agricultural solutions,
-                        technology and better farming.
-                    </p>
-
-                </div>
-
-
-                <!-- SOLUTIONS -->
-
-                <div class="footer-column">
-
-                    <h4>Solutions</h4>
-
-                    <a href="crop-protection.html">
-                        Crop Protection
-                    </a>
-
-                    <a href="plant-nutrition.html">
-                        Plant Nutrition
-                    </a>
-
-                    <a href="seeds.html">
-                        Seeds
-                    </a>
-
-                    <a href="animal-health.html">
-                        Animal Health
-                    </a>
-
-                </div>
-
-
-                <!-- OUR SCIENCE -->
-
-                <div class="footer-column">
-
-                    <h4>Our Science</h4>
-
-                    <a href="science.html#crop-science">
-                        Crop Science
-                    </a>
-
-                    <a href="science.html#animal-science">
-                        Animal Science
-                    </a>
-
-                    <a href="science.html#genetics">
-                        Breeding &amp; Genetics
-                    </a>
-
-                    <a href="farm-automation.html">
-                        Farm Technology
-                    </a>
-
-                </div>
-
-
-                <!-- COMPANY -->
-
-                <div class="footer-column">
-
-                    <h4>Company</h4>
-
-                    <a href="products.html">
-                        Products
-                    </a>
-
-                    <a href="brands.html">
-                        Our Brands
-                    </a>
-
-                    <a href="where-to-buy.html">
-                        Where to Buy
-                    </a>
-
-                    <a href="insights.html">
-                        Insights
-                    </a>
-
-                    <a href="contact.html">
-                        Contact
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- FOOTER BOTTOM -->
-
-            <div class="footer-bottom">
-
-                <p>
-                    © 2026 Okafor Agriscience Ltd. All rights reserved.
-                </p>
-
-                <p>
-                    OKAFOR AGRISCIENCE
-                </p>
+                <a href="contact.html">
+                    Contact
+                </a>
 
             </div>
 
         </div>
 
-    </footer>
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Okafor Agriscience Ltd. All rights reserved.
+            </p>
+
+            <p>
+                OKAFOR AGRISCIENCE
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
 
 
-    <!-- =========================
-         PRODUCT FILTER JAVASCRIPT
-    ========================== -->
+<!-- =========================
+     PRODUCT FILTER JAVASCRIPT
+========================== -->
 
-    <script>
+<script>
 
-        const filterButtons =
-            document.querySelectorAll(".product-filter");
+    const filterButtons =
+        document.querySelectorAll(".product-filter");
 
-        const searchInput =
-            document.getElementById("productSearch");
+    const searchInput =
+        document.getElementById("productSearch");
 
-        const products =
-            document.querySelectorAll(".product-card");
+    const products =
+        document.querySelectorAll(".product-card");
 
-        const emptyMessage =
-            document.getElementById("productsEmpty");
+    const emptyMessage =
+        document.getElementById("productsEmpty");
 
-        let currentFilter = "all";
-
-
-        function filterProducts() {
-
-            const searchTerm =
-                searchInput.value.toLowerCase().trim();
-
-            let visibleProducts = 0;
+    let currentFilter = "all";
 
 
-            products.forEach(product => {
+    function filterProducts() {
 
-                const category =
-                    product.dataset.category || "";
+        const searchTerm =
+            searchInput.value.toLowerCase().trim();
 
-                const name =
-                    product.dataset.name || "";
-
-                const text =
-                    product.innerText.toLowerCase();
+        let visibleProducts = 0;
 
 
-                const matchesCategory =
-                    currentFilter === "all" ||
-                    category === currentFilter;
+        products.forEach(product => {
+
+            const category =
+                product.dataset.category || "";
+
+            const name =
+                product.dataset.name || "";
+
+            const text =
+                product.innerText.toLowerCase();
 
 
-                const matchesSearch =
-                    searchTerm === "" ||
-                    name.toLowerCase().includes(searchTerm) ||
-                    text.includes(searchTerm);
+            const matchesCategory =
+                currentFilter === "all" ||
+                category === currentFilter;
 
 
-                if (
-                    matchesCategory &&
-                    matchesSearch
-                ) {
-
-                    product.style.display = "";
-
-                    visibleProducts++;
-
-                } else {
-
-                    product.style.display = "none";
-
-                }
-
-            });
+            const matchesSearch =
+                searchTerm === "" ||
+                name.toLowerCase().includes(searchTerm) ||
+                text.includes(searchTerm);
 
 
-            if (visibleProducts === 0) {
+            if (
+                matchesCategory &&
+                matchesSearch
+            ) {
 
-                emptyMessage.style.display = "block";
+                product.style.display = "";
+
+                visibleProducts++;
 
             } else {
 
-                emptyMessage.style.display = "none";
+                product.style.display = "none";
 
             }
-
-        }
-
-
-        filterButtons.forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                filterButtons.forEach(btn => {
-                    btn.classList.remove("active");
-                });
-
-                button.classList.add("active");
-
-                currentFilter =
-                    button.dataset.filter;
-
-                filterProducts();
-
-            });
 
         });
 
 
-        searchInput.addEventListener(
-            "input",
-            filterProducts
-        );
+        if (visibleProducts === 0) {
 
+            emptyMessage.style.display = "block";
+
+        } else {
+
+            emptyMessage.style.display = "none";
+
+        }
+
+    }
+
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            currentFilter =
+                button.dataset.filter;
+
+            filterProducts();
+
+        });
+
+    });
+
+
+    searchInput.addEventListener(
+        "input",
+        filterProducts
+    );
+
+
+    /* =========================
+       URL CATEGORY FILTER
+       Allows links such as:
+
+       products.html#crop-protection
+       products.html#plant-nutrition
+       products.html#seeds
+       products.html#animal-health
+       products.html#genetics
+    ========================== */
+
+    function applyUrlFilter() {
+
+        const category =
+            window.location.hash.substring(1);
+
+        if (!category) {
+            filterProducts();
+            return;
+        }
+
+        const matchingButton =
+            document.querySelector(
+                '.product-filter[data-filter="' +
+                category +
+                '"]'
+            );
+
+        if (matchingButton) {
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+            matchingButton.classList.add("active");
+
+            currentFilter = category;
+
+        }
 
         filterProducts();
 
-    </script>
+    }
 
 
-    <!-- =========================
-         MAIN OKAFOR NAVIGATION
-         Includes hamburger menu
-    ========================== -->
+    applyUrlFilter();
 
-    <script src="script.js"></script>
+
+    window.addEventListener(
+        "hashchange",
+        applyUrlFilter
+    );
+
+</script>
+
+
+<!-- =========================
+     MAIN OKAFOR NAVIGATION
+========================== -->
+
+<script src="script.js"></script>
 
 </body>
 </html>
