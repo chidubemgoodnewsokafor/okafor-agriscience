@@ -1,335 +1,346 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Products | Okafor Agriscience</title>
 
-<meta name="description" content="Explore agricultural products and solutions from Okafor Agriscience.">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+    <title>
+        Products | Okafor Agriscience
+    </title>
+
+    <meta name="description"
+          content="Explore agricultural products and solutions from Okafor Agriscience.">
+
+    <link rel="stylesheet"
+          href="style.css">
 
 <style>
-    /* =========================
-       PRODUCTS PAGE
-    ========================== */
 
-    .products-hero {
-        background: #074540;
-        color: #ffffff;
-        padding: 90px 20px;
-        text-align: center;
+/* =========================
+   PRODUCTS PAGE
+========================== */
+
+.products-hero {
+    background: #074540;
+    color: #ffffff;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.products-hero .eyebrow {
+    color: #FFE500;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.products-hero h1 {
+    font-size: 48px;
+    margin: 0 0 20px;
+}
+
+.products-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.products-section {
+    padding: 80px 20px;
+}
+
+.products-intro {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+.products-intro .eyebrow {
+    color: #01998E;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.products-intro h2 {
+    font-size: 38px;
+    margin: 12px 0 15px;
+    color: #074540;
+}
+
+.products-intro p {
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/* SEARCH */
+
+.product-search {
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.product-search input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+.product-search input:focus {
+    border-color: #01998E;
+}
+
+
+/* FILTERS */
+
+.product-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 45px;
+}
+
+.product-filter {
+    border: 1px solid #01998E;
+    background: #ffffff;
+    color: #074540;
+    padding: 11px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.product-filter:hover,
+.product-filter.active {
+    background: #01998E;
+    color: #ffffff;
+}
+
+
+/* PRODUCT GRID */
+
+.products-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.product-image {
+    height: 220px;
+    background: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 15px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-content {
+    padding: 25px;
+}
+
+.product-category {
+    color: #01998E;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-content h3 {
+    color: #074540;
+    margin: 10px 0;
+    font-size: 23px;
+}
+
+.product-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-link {
+    color: #99010C;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.product-link:hover {
+    text-decoration: underline;
+}
+
+
+/* EMPTY / COMING SOON */
+
+.products-empty {
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 55px 30px;
+    text-align: center;
+    border: 2px dashed #d8d8d8;
+    border-radius: 15px;
+    background: #fafafa;
+}
+
+.products-empty-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: #FFE500;
+    color: #074540;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.products-empty h3 {
+    color: #074540;
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.products-empty p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #666;
+    line-height: 1.7;
+}
+
+
+/* CTA */
+
+.products-cta {
+    background: #FFE500;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.products-cta .eyebrow {
+    color: #074540;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.products-cta h2 {
+    color: #074540;
+    font-size: 36px;
+    margin: 0 0 15px;
+}
+
+.products-cta p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: #333;
+    line-height: 1.7;
+}
+
+.products-cta a {
+    display: inline-block;
+    background: #074540;
+    color: #ffffff;
+    padding: 14px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.products-cta a:hover {
+    background: #01998E;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .products-hero .eyebrow {
-        color: #FFE500;
-        font-weight: 700;
-        letter-spacing: 2px;
-        font-size: 14px;
-        margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+
+    .products-hero {
+        padding: 70px 20px;
     }
 
     .products-hero h1 {
-        font-size: 48px;
-        margin: 0 0 20px;
-    }
-
-    .products-hero p {
-        max-width: 700px;
-        margin: 0 auto;
-        font-size: 18px;
-        line-height: 1.7;
-    }
-
-    .products-section {
-        padding: 80px 20px;
-    }
-
-    .products-intro {
-        text-align: center;
-        max-width: 750px;
-        margin: 0 auto 40px;
-    }
-
-    .products-intro .eyebrow {
-        color: #01998E;
-        font-weight: 700;
-        letter-spacing: 2px;
-        font-size: 14px;
+        font-size: 38px;
     }
 
     .products-intro h2 {
-        font-size: 38px;
-        margin: 12px 0 15px;
-        color: #074540;
+        font-size: 30px;
     }
 
-    .products-intro p {
-        line-height: 1.7;
-        color: #555;
+    .products-section {
+        padding: 60px 15px;
     }
 
-    /* SEARCH */
-
-    .product-search {
-        max-width: 650px;
-        margin: 0 auto 30px;
+    .products-grid {
+        grid-template-columns: 1fr;
     }
-
-    .product-search input {
-        width: 100%;
-        box-sizing: border-box;
-        padding: 16px 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        font-size: 16px;
-        outline: none;
-    }
-
-    .product-search input:focus {
-        border-color: #01998E;
-    }
-
-    /* FILTERS */
 
     .product-filters {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 45px;
+        gap: 8px;
     }
 
     .product-filter {
-        border: 1px solid #01998E;
-        background: #ffffff;
-        color: #074540;
-        padding: 11px 18px;
-        border-radius: 30px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: 600;
-        transition: 0.3s ease;
-    }
-
-    .product-filter:hover,
-    .product-filter.active {
-        background: #01998E;
-        color: #ffffff;
-    }
-
-    /* PRODUCT GRID */
-
-    .products-grid {
-        max-width: 1100px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 25px;
-    }
-
-    .product-card {
-        background: #ffffff;
-        border: 1px solid #e5e5e5;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-    }
-
-    .product-image {
-        height: 220px;
-        background: #f2f2f2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 15px;
-    }
-
-    .product-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    .product-content {
-        padding: 25px;
-    }
-
-    .product-category {
-        color: #01998E;
+        padding: 9px 13px;
         font-size: 13px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .product-content h3 {
-        color: #074540;
-        margin: 10px 0;
-        font-size: 23px;
-    }
-
-    .product-content p {
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-
-    .product-link {
-        color: #99010C;
-        font-weight: 700;
-        text-decoration: none;
-    }
-
-    .product-link:hover {
-        text-decoration: underline;
-    }
-
-    /* EMPTY / COMING SOON */
-
-    .products-empty {
-        max-width: 750px;
-        margin: 0 auto;
-        padding: 55px 30px;
-        text-align: center;
-        border: 2px dashed #d8d8d8;
-        border-radius: 15px;
-        background: #fafafa;
-    }
-
-    .products-empty-icon {
-        width: 65px;
-        height: 65px;
-        border-radius: 50%;
-        background: #FFE500;
-        color: #074540;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px;
-        font-size: 32px;
-        font-weight: 700;
-    }
-
-    .products-empty h3 {
-        color: #074540;
-        font-size: 27px;
-        margin-bottom: 12px;
-    }
-
-    .products-empty p {
-        max-width: 600px;
-        margin: 0 auto;
-        color: #666;
-        line-height: 1.7;
-    }
-
-    /* CTA */
-
-    .products-cta {
-        background: #FFE500;
-        padding: 70px 20px;
-        text-align: center;
-    }
-
-    .products-cta .eyebrow {
-        color: #074540;
-        font-weight: 700;
-        letter-spacing: 2px;
-        font-size: 14px;
-        margin-bottom: 10px;
     }
 
     .products-cta h2 {
-        color: #074540;
-        font-size: 36px;
-        margin: 0 0 15px;
+        font-size: 30px;
     }
 
-    .products-cta p {
-        max-width: 650px;
-        margin: 0 auto 25px;
-        color: #333;
-        line-height: 1.7;
-    }
+}
 
-    .products-cta a {
-        display: inline-block;
-        background: #074540;
-        color: #ffffff;
-        padding: 14px 25px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: 700;
-    }
-
-    .products-cta a:hover {
-        background: #01998E;
-    }
-
-    /* FOOTER LOGO */
-
-    .footer-logo {
-        width: 125px;
-        max-width: 100%;
-        height: auto;
-        filter: brightness(0) invert(1);
-        margin-bottom: 12px;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-
-        .products-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-    }
-
-    @media (max-width: 600px) {
-
-        .products-hero {
-            padding: 70px 20px;
-        }
-
-        .products-hero h1 {
-            font-size: 38px;
-        }
-
-        .products-intro h2 {
-            font-size: 30px;
-        }
-
-        .products-section {
-            padding: 60px 15px;
-        }
-
-        .products-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .product-filters {
-            gap: 8px;
-        }
-
-        .product-filter {
-            padding: 9px 13px;
-            font-size: 13px;
-        }
-
-        .products-cta h2 {
-            font-size: 30px;
-        }
-
-        .footer-logo {
-            width: 110px;
-        }
-
-    }
 </style>
 
-</head><body><!-- =========================
+</head>
+
+
+<body>
+
+
+<!-- =========================
      HEADER
 ========================== -->
 
@@ -337,39 +348,64 @@
 
     <div class="container nav-container">
 
-        <a href="index.html" class="brand-logo">
+        <a href="index.html"
+           class="brand-logo">
+
             <img
                 src="okafor-logo.png"
                 alt="Okafor Agriscience"
                 class="logo-image">
+
         </a>
+
 
         <nav class="nav">
 
-            <a href="index.html">Home</a>
+            <a href="index.html">
+                Home
+            </a>
 
-            <a href="solutions.html">Solutions</a>
+            <a href="solutions.html">
+                Solutions
+            </a>
 
-            <a href="products.html">Products</a>
+            <a href="products.html">
+                Products
+            </a>
 
-            <a href="science.html">Our Science</a>
+            <a href="science.html">
+                Our Science
+            </a>
 
-            <a href="farm-automation.html">Farm Technology</a>
+            <a href="farm-automation.html">
+                Farm Technology
+            </a>
 
-            <a href="brands.html">Our Brands</a>
+            <a href="brands.html">
+                Our Brands
+            </a>
 
-            <a href="where-to-buy.html">Where to Buy</a>
+            <a href="where-to-buy.html">
+                Where to Buy
+            </a>
 
-            <a href="insights.html">Insights</a>
+            <a href="insights.html">
+                Insights
+            </a>
 
-            <a href="contact.html">Contact</a>
+            <a href="contact.html">
+                Contact
+            </a>
 
         </nav>
+
 
         <button
             class="menu-button"
             aria-label="Open navigation menu">
+
             ☰
+
         </button>
 
     </div>
@@ -387,7 +423,9 @@
         OKAFOR AGRISCIENCE
     </div>
 
-    <h1>Our Products</h1>
+    <h1>
+        Our Products
+    </h1>
 
     <p>
         Agricultural products and solutions built around science,
@@ -404,6 +442,7 @@
 <main>
 
     <section class="products-section">
+
 
         <div class="products-intro">
 
@@ -444,42 +483,59 @@
             <button
                 class="product-filter active"
                 data-filter="all">
+
                 All Products
+
             </button>
+
 
             <button
                 class="product-filter"
                 data-filter="crop-protection"
                 id="crop-protection">
+
                 Crop Protection
+
             </button>
+
 
             <button
                 class="product-filter"
                 data-filter="plant-nutrition"
                 id="plant-nutrition">
+
                 Plant Nutrition
+
             </button>
+
 
             <button
                 class="product-filter"
                 data-filter="seeds"
                 id="seeds">
+
                 Seeds
+
             </button>
+
 
             <button
                 class="product-filter"
                 data-filter="animal-health"
                 id="animal-health">
+
                 Animal Health
+
             </button>
+
 
             <button
                 class="product-filter"
                 data-filter="genetics"
                 id="genetics">
+
                 Breeding &amp; Genetics
+
             </button>
 
         </div>
@@ -493,43 +549,6 @@
 
             <!--
                 REAL PRODUCTS WILL BE ADDED HERE LATER.
-
-                Example:
-
-                <article
-                    class="product-card"
-                    data-category="seeds"
-                    data-name="Product Name">
-
-                    <div class="product-image">
-                        <img
-                            src="images/product-name.jpg"
-                            alt="Product Name">
-                    </div>
-
-                    <div class="product-content">
-
-                        <span class="product-category">
-                            Seeds
-                        </span>
-
-                        <h3>
-                            Product Name
-                        </h3>
-
-                        <p>
-                            Short product description.
-                        </p>
-
-                        <a
-                            href="product-name.html"
-                            class="product-link">
-                            View product →
-                        </a>
-
-                    </div>
-
-                </article>
             -->
 
         </div>
@@ -590,127 +609,121 @@
 
 
 <!-- =========================
-     FOOTER
+     STANDARD OKAFOR FOOTER
 ========================== -->
 
 <footer class="footer">
 
-    <div class="container">
-
-        <div class="footer-grid">
-
-            <!-- BRAND -->
-
-            <div class="footer-brand">
-
-                <img
-                    src="okafor-logo.png"
-                    alt="Okafor Agriscience"
-                    class="footer-logo">
-
-                <p>
-                    Science that nourishes.
-                </p>
-
-                <p>
-                    Okafor Agriscience is a science-based agriculture
-                    company focused on agricultural solutions,
-                    technology and better farming.
-                </p>
-
-            </div>
+    <div class="container footer-grid">
 
 
-            <!-- SOLUTIONS -->
+        <!-- BRAND -->
 
-            <div class="footer-column">
+        <div class="footer-brand">
 
-                <h4>Solutions</h4>
+            <img
+                src="okafor-logo.png"
+                alt="Okafor Agriscience"
+                class="footer-logo-image">
 
-                <a href="solutions.html#crop-protection">
-                    Crop Protection
-                </a>
+            <p class="footer-motto">
+                Science that nourishes.
+            </p>
 
-                <a href="solutions.html#plant-nutrition">
-                    Plant Nutrition
-                </a>
-
-                <a href="solutions.html#seeds">
-                    Seeds
-                </a>
-
-                <a href="solutions.html#animal-health">
-                    Animal Health
-                </a>
-
-            </div>
+        </div>
 
 
-            <!-- OUR SCIENCE -->
+        <!-- SOLUTIONS -->
 
-            <div class="footer-column">
+        <div>
 
-                <h4>Our Science</h4>
+            <h4>
+                Solutions
+            </h4>
 
-                <a href="science.html#crop-science">
-                    Crop Science
-                </a>
+            <a href="solutions.html#crop-protection">
+                Crop Protection
+            </a>
 
-                <a href="science.html#animal-science">
-                    Animal Science
-                </a>
+            <a href="solutions.html#plant-nutrition">
+                Plant Nutrition
+            </a>
 
-                <a href="science.html#genetics">
-                    Breeding &amp; Genetics
-                </a>
+            <a href="solutions.html#seeds">
+                Seeds
+            </a>
 
-                <a href="farm-automation.html">
-                    Farm Technology
-                </a>
-
-            </div>
-
-
-            <!-- COMPANY -->
-
-            <div class="footer-column">
-
-                <h4>Company</h4>
-
-                <a href="about.html">
-                    About
-                </a>
-
-                <a href="brands.html">
-                    Our Brands
-                </a>
-
-                <a href="where-to-buy.html">
-                    Where to Buy
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </div>
+            <a href="solutions.html#animal-health">
+                Animal Health
+            </a>
 
         </div>
 
 
-        <!-- FOOTER BOTTOM -->
+        <!-- OUR SCIENCE -->
 
-        <div class="footer-bottom">
+        <div>
 
-            <p>
-                © 2026 Okafor Agriscience Ltd. All rights reserved.
-            </p>
+            <h4>
+                Our Science
+            </h4>
 
-            <p>
-                OKAFOR AGRISCIENCE
-            </p>
+            <a href="science.html#crop-science">
+                Crop Science
+            </a>
+
+            <a href="science.html#animal-science">
+                Animal Science
+            </a>
+
+            <a href="science.html#genetics">
+                Breeding &amp; Genetics
+            </a>
+
+            <a href="science.html#technology">
+                Farm Technology
+            </a>
 
         </div>
+
+
+        <!-- COMPANY -->
+
+        <div>
+
+            <h4>
+                Company
+            </h4>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="index.html#brands">
+                Our Brands
+            </a>
+
+            <a href="where-to-buy.html">
+                Where to Buy
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 Okafor Agriscience Ltd
+            All rights reserved.
+        </p>
 
     </div>
 
@@ -723,161 +736,161 @@
 
 <script>
 
-    const filterButtons =
-        document.querySelectorAll(".product-filter");
+const filterButtons =
+    document.querySelectorAll(".product-filter");
 
-    const searchInput =
-        document.getElementById("productSearch");
+const searchInput =
+    document.getElementById("productSearch");
 
-    const products =
-        document.querySelectorAll(".product-card");
+const products =
+    document.querySelectorAll(".product-card");
 
-    const emptyMessage =
-        document.getElementById("productsEmpty");
+const emptyMessage =
+    document.getElementById("productsEmpty");
 
-    let currentFilter = "all";
-
-
-    function filterProducts() {
-
-        const searchTerm =
-            searchInput.value.toLowerCase().trim();
-
-        let visibleProducts = 0;
+let currentFilter = "all";
 
 
-        products.forEach(product => {
+function filterProducts() {
 
-            const category =
-                product.dataset.category || "";
+    const searchTerm =
+        searchInput.value.toLowerCase().trim();
 
-            const name =
-                product.dataset.name || "";
-
-            const text =
-                product.innerText.toLowerCase();
+    let visibleProducts = 0;
 
 
-            const matchesCategory =
-                currentFilter === "all" ||
-                category === currentFilter;
+    products.forEach(product => {
+
+        const category =
+            product.dataset.category || "";
+
+        const name =
+            product.dataset.name || "";
+
+        const text =
+            product.innerText.toLowerCase();
 
 
-            const matchesSearch =
-                searchTerm === "" ||
-                name.toLowerCase().includes(searchTerm) ||
-                text.includes(searchTerm);
+        const matchesCategory =
+            currentFilter === "all" ||
+            category === currentFilter;
 
 
-            if (
-                matchesCategory &&
-                matchesSearch
-            ) {
-
-                product.style.display = "";
-
-                visibleProducts++;
-
-            } else {
-
-                product.style.display = "none";
-
-            }
-
-        });
+        const matchesSearch =
+            searchTerm === "" ||
+            name.toLowerCase().includes(searchTerm) ||
+            text.includes(searchTerm);
 
 
-        if (visibleProducts === 0) {
+        if (
+            matchesCategory &&
+            matchesSearch
+        ) {
 
-            emptyMessage.style.display = "block";
+            product.style.display = "";
+
+            visibleProducts++;
 
         } else {
 
-            emptyMessage.style.display = "none";
+            product.style.display = "none";
 
         }
-
-    }
-
-
-    filterButtons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            filterButtons.forEach(btn => {
-                btn.classList.remove("active");
-            });
-
-            button.classList.add("active");
-
-            currentFilter =
-                button.dataset.filter;
-
-            filterProducts();
-
-        });
 
     });
 
 
-    searchInput.addEventListener(
-        "input",
-        filterProducts
-    );
+    if (visibleProducts === 0) {
+
+        emptyMessage.style.display = "block";
+
+    } else {
+
+        emptyMessage.style.display = "none";
+
+    }
+
+}
 
 
-    /* =========================
-       URL CATEGORY FILTER
-       Allows links such as:
+filterButtons.forEach(button => {
 
-       products.html#crop-protection
-       products.html#plant-nutrition
-       products.html#seeds
-       products.html#animal-health
-       products.html#genetics
-    ========================== */
+    button.addEventListener("click", () => {
 
-    function applyUrlFilter() {
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
 
-        const category =
-            window.location.hash.substring(1);
+        button.classList.add("active");
 
-        if (!category) {
-            filterProducts();
-            return;
-        }
-
-        const matchingButton =
-            document.querySelector(
-                '.product-filter[data-filter="' +
-                category +
-                '"]'
-            );
-
-        if (matchingButton) {
-
-            filterButtons.forEach(btn => {
-                btn.classList.remove("active");
-            });
-
-            matchingButton.classList.add("active");
-
-            currentFilter = category;
-
-        }
+        currentFilter =
+            button.dataset.filter;
 
         filterProducts();
+
+    });
+
+});
+
+
+searchInput.addEventListener(
+    "input",
+    filterProducts
+);
+
+
+/* =========================
+   URL CATEGORY FILTER
+========================== */
+
+function applyUrlFilter() {
+
+    const category =
+        window.location.hash.substring(1);
+
+
+    if (!category) {
+
+        filterProducts();
+
+        return;
 
     }
 
 
-    applyUrlFilter();
+    const matchingButton =
+        document.querySelector(
+            '.product-filter[data-filter="' +
+            category +
+            '"]'
+        );
 
 
-    window.addEventListener(
-        "hashchange",
-        applyUrlFilter
-    );
+    if (matchingButton) {
+
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        matchingButton.classList.add("active");
+
+        currentFilter = category;
+
+    }
+
+
+    filterProducts();
+
+}
+
+
+applyUrlFilter();
+
+
+window.addEventListener(
+    "hashchange",
+    applyUrlFilter
+);
 
 </script>
 
@@ -888,5 +901,7 @@
 
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
