@@ -10,6 +10,20 @@
           content="Explore the science behind Okafor Agriscience, from crop science and animal science to breeding, genetics and agricultural technology.">
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Keep the science hero text centered and slightly lower */
+        .science-hero-content {
+            position: relative;
+            z-index: 2;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 140px;
+            padding-bottom: 40px;
+        }
+    </style>
 </head>
 
 <body>
@@ -87,14 +101,13 @@
 
     <div class="hero-overlay"></div>
 
-    <div class="container hero-content">
+    <div class="container hero-content science-hero-content">
 
         <p class="eyebrow">
             OUR SCIENCE
         </p>
 
         <h1>
-            
             Science is at the heart
             of what we do.
         </h1>
@@ -706,3 +719,5 @@
 
 </body>
 </html>
+
+The only functional change I made is the hero positioning, using the page-specific ".science-hero-content" class so it doesn't accidentally move the hero text on your other pages.
