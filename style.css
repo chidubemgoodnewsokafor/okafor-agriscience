@@ -203,6 +203,10 @@ h4 {
     gap: 30px;
 }
 
+/* HEADER LOGO
+   Keep this separate from the brand-card logos.
+*/
+
 .brand-logo {
     display: flex;
     align-items: center;
@@ -879,7 +883,7 @@ h4 {
 
     padding: 40px 30px;
 
-    min-height: 300px;
+    min-height: 340px;
 
     border-radius: var(--radius);
 
@@ -896,31 +900,65 @@ h4 {
     box-shadow: var(--shadow);
 }
 
-.brand-logo {
-    min-height: 80px;
+
+/* BRAND CARD LOGOS
+   Separate class so it does NOT interfere
+   with the main header logo.
+*/
+
+.brand-card-logo {
+    width: 100%;
+    height: 150px;
 
     display: flex;
-
     align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    overflow: hidden;
+}
+
+.brand-card-logo img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 260px;
+    max-height: 125px;
+
+    object-fit: contain;
+}
+
+
+/* Individual brand logo positioning */
+
+.brand-card-logo.idegro img {
+    max-width: 250px;
+    max-height: 120px;
+}
+
+.brand-card-logo.rainso img {
+    max-width: 250px;
+    max-height: 120px;
+}
+
+.brand-card-logo.azbred img {
+    max-width: 250px;
+    max-height: 120px;
+}
+
+
+/* Azbred text fallback */
+
+.azbred-wordmark {
+    color: var(--red);
 
     font-size: 2rem;
-
     font-weight: 900;
-
-    margin-bottom: 25px;
 }
 
-.idegro {
-    color: var(--teal);
-}
-   }
-.rainso {
-    color: var(--dark-teal);
-}
-
-.azbred {
-    color: var(--red);
-}
 
 .brand-card h3 {
     color: var(--dark-teal);
@@ -1240,11 +1278,15 @@ h4 {
 
     display: flex;
 
+    flex-direction: column;
+
     align-items: center;
 
-    justify-content: space-between;
+    justify-content: center;
 
-    gap: 20px;
+    gap: 8px;
+
+    text-align: center;
 
     color: rgba(255,255,255,0.45);
 
@@ -1304,7 +1346,6 @@ h4 {
         grid-template-columns:
             repeat(2, 1fr);
     }
-
 }
 
 
@@ -1389,27 +1430,32 @@ h4 {
         grid-column: 1 / -1;
     }
 
-    .footer-bottom {
-    min-height: 75px;
-
-    border-top: 1px solid rgba(255,255,255,0.12);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 20px;
-
-    text-align: center;
-
-    color: rgba(255,255,255,0.45);
-
-    font-size: 0.75rem;
-    }
+    .impact-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
+    .impact-card:nth-child(2) {
+        border-right: none;
+    }
+
+    .impact-card:nth-child(-n+2) {
+        border-bottom: 1px solid rgba(7, 69, 64, 0.12);
+    }
+
+    .impact-section {
+        padding-bottom: 25px;
+    }
+
+    .sustainability-section {
+        padding-top: 25px;
+        padding-bottom: 40px;
+    }
+
+    .farmer-success-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
 }
 
 
@@ -1432,23 +1478,15 @@ h4 {
     .button {
         width: 100%;
     }
+}
 
-}
-/* CENTER FOOTER BOTTOM */
-.footer-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 8px;
-}
+
 /* =========================================================
    OUR IMPACT
 ========================================================= */
 
 .impact-section {
-    padding: 95px 0;
+    padding: 95px 0 40px;
     background: var(--off-white);
 }
 
@@ -1471,14 +1509,19 @@ h4 {
 
 .impact-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
     border-top: 1px solid rgba(7, 69, 64, 0.12);
     border-bottom: 1px solid rgba(7, 69, 64, 0.12);
 }
 
 .impact-card {
     padding: 38px 25px;
+
     text-align: center;
+
     border-right: 1px solid rgba(7, 69, 64, 0.12);
 }
 
@@ -1488,9 +1531,13 @@ h4 {
 
 .impact-number {
     color: var(--dark-teal);
+
     font-size: clamp(2.5rem, 5vw, 4.5rem);
+
     line-height: 1;
+
     font-weight: 800;
+
     letter-spacing: -0.04em;
 }
 
@@ -1500,36 +1547,18 @@ h4 {
 
 .impact-card p {
     margin-top: 12px;
+
     color: var(--muted);
+
     font-size: 0.9rem;
+
     font-weight: 700;
 }
 
 
-/* Mobile */
-
-@media (max-width: 700px) {
-
-    .impact-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .impact-card:nth-child(2) {
-        border-right: none;
-    }
-
-    .impact-card:nth-child(-n+2) {
-        border-bottom: 1px solid rgba(7, 69, 64, 0.12);
-    }
-
-}
 /* =========================================================
    SUSTAINABILITY / FARMER SUCCESS SPACING
 ========================================================= */
-
-.impact-section {
-    padding-bottom: 40px;
-}
 
 .sustainability-section {
     padding-top: 40px;
@@ -1541,46 +1570,20 @@ h4 {
     padding-bottom: 55px;
 }
 
-@media (max-width: 700px) {
 
-    .impact-section {
-        padding-bottom: 25px;
-    }
-
-    .sustainability-section {
-        padding-top: 25px;
-        padding-bottom: 40px;
-    }
-
-    .farmer-success-section {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
-}
 /* =========================================================
-   OUR BRANDS
+   BRAND LOGO MOBILE SIZING
 ========================================================= */
 
-.brand-logo {
-    width: 100%;
-    height: 150px;
+@media (max-width: 700px) {
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .brand-card-logo {
+        height: 135px;
+    }
 
-    margin-bottom: 20px;
-}
+    .brand-card-logo img {
+        max-width: 230px;
+        max-height: 110px;
+    }
 
-.brand-logo img {
-    display: block;
-
-    max-width: 260px;
-    max-height: 125px;
-
-    width: auto;
-    height: auto;
-
-    object-fit: contain;
 }
