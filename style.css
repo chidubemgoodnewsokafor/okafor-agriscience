@@ -201,12 +201,18 @@ HEADER
     gap: 30px;
 }
 
-.brand-logo {
+.site-logo {
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    width: auto;
 }
 
+.logo-image {
+    width: 155px;
+    height: auto;
+    object-fit: contain;
+}
 .logo-image {
     width: 155px;
     height: auto;
